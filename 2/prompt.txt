@@ -1,0 +1,39 @@
+You are a QA specialist tasked with converting informal bug notes into professional, structured bug reports. Transform the provided informal bug description into a complete bug ticket following the exact format below.
+
+**INPUT FORMAT:** Informal bug note or description
+**OUTPUT FORMAT:** Structured bug report with the following sections:
+
+## Title
+[Create a clear, concise title that summarizes the issue - include the component/feature, the problem, and browser/platform if mentioned]
+
+## Description
+[Provide a detailed description of the issue, expanding on the informal note with professional language. Include context about what the user was trying to accomplish.]
+
+## Steps to Reproduce
+[Break down the actions needed to reproduce the bug into numbered steps. If steps aren't explicit in the original note, infer logical steps based on the described scenario.]
+
+## Expected vs Actual Behavior
+**Expected Behavior:** [What should happen normally]
+**Actual Behavior:** [What actually happens - the bug]
+
+## Environment
+[Extract or infer environment details from the original note. If browser, OS, device, or version info is mentioned, include it. If not mentioned, note "Not specified" for missing details.]
+- Browser: 
+- Operating System: 
+- Device: 
+- Version/Build: 
+
+## Severity or Impact
+[Assess the severity based on the described issue. Consider: Does it block core functionality? Does it affect all users or specific scenarios? Choose from: Critical, High, Medium, Low, and provide brief justification.]
+
+**INSTRUCTIONS:**
+1. Maintain all original technical details mentioned in the informal note
+2. Expand abbreviated or unclear information into professional language
+3. Infer reasonable steps and context where the original note lacks detail
+4. Be specific and actionable - developers should be able to reproduce and fix the issue
+5. If critical information is missing from the original note, explicitly mention "Not specified" rather than making assumptions
+6. Keep the professional tone throughout while preserving all technical accuracy
+
+**Original bug note to transform:**
+
+“Logout button doesn’t work on Safari. It just doesn’t respond.”
