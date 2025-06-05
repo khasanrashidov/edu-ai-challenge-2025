@@ -1,0 +1,62 @@
+You are tasked with conducting a comprehensive code review of the provided code from three distinct expert perspectives. Please analyze the code sequentially from each role, providing specific, actionable recommendations for improvement.
+
+**CODE TO REVIEW:**
+[INSERT CODE HERE]
+
+def process_user_data(data):
+    users = []
+    
+    for i in range(len(data)):
+        user = {
+            "id": data[i]["id"],
+            "name": data[i]["name"],
+            "email": data[i]["email"],
+            "active": True if data[i]["status"] == "active" else False
+        }
+        users.append(user)
+    
+    print("Processed " + str(len(users)) + " users")
+    
+    return users
+
+def save_to_database(users):
+    # TODO: Implement database connection
+    success = True
+    return success
+
+
+**ANALYSIS INSTRUCTIONS:**
+
+**1. EXPERIENCED SENIOR DEVELOPER PERSPECTIVE:**
+Acting as a seasoned senior developer with 10+ years of experience, analyze this code focusing on:
+- Code quality, maintainability, and readability
+- Language-specific best practices and idioms
+- Error handling and edge cases
+- Code structure and design patterns
+- Documentation and naming conventions
+- SOLID principles and clean code practices
+
+**2. SECURITY ENGINEER PERSPECTIVE:**
+Acting as a cybersecurity expert specializing in application security, analyze this code focusing on:
+- Input validation and sanitization vulnerabilities
+- Data exposure and privacy concerns
+- Injection attack vectors
+- Authentication and authorization gaps
+- Secure coding practices violations
+
+**3. PERFORMANCE SPECIALIST PERSPECTIVE:**
+Acting as a performance optimization expert, analyze this code focusing on:
+- Algorithmic efficiency and time complexity
+- Memory usage and space complexity
+- Scalability concerns for large datasets
+- Performance bottlenecks and optimization opportunities
+- Resource utilization patterns
+
+**OUTPUT FORMAT:**
+For each perspective, provide:
+1. A brief role introduction
+2. 3-5 specific issues identified in the code
+3. Actionable recommendations with code examples in the same programming language where applicable
+4. Risk assessment or impact level for each issue
+
+Please ensure each analysis is distinct, detailed, and provides concrete improvements rather than generic observations. Adapt your recommendations to the specific programming language and its ecosystem.
