@@ -1,0 +1,55 @@
+[
+    {
+        "feedback": "Sensor just stops tracking for like a half second kinda often even at 8000hz. I've also tried it plugged in and still the same problem. First one I got I had to return also because the dongle just didnt work, $150 mouse btw",
+        "analysis": {
+            "sentiment": "Negative",
+            "isRelevant": true,
+            "mainSubject": "Sensor tracking reliability and hardware quality issues",
+            "positives": [],
+            "painPoints": [
+                "Sensor stops tracking intermittently at 8000hz",
+                "Problem persists in wired mode",
+                "Dongle failure requiring product return",
+                "Poor quality control for expensive product"
+            ],
+            "improvementSuggestions": [
+                "Improve sensor tracking stability at high polling rates",
+                "Better quality control for wireless dongles",
+                "Enhanced hardware reliability testing"
+            ],
+            "featuresMentioned": [
+                "Sensor tracking",
+                "Polling rate (8000hz)",
+                "Wireless dongle",
+                "Wired connection"
+            ],
+            "userExpertise": "Experienced"
+        }
+    },
+    {
+        "feedback": "Is it worth it? It is a product with no flaws in my opinion, if you love it go for it, but its not worth the price since you'll be able to perform the same with a cheaper product with half the specs.",
+        "analysis": {
+            "sentiment": "Mixed",
+            "isRelevant": true,
+            "mainSubject": "Value proposition and price-to-performance ratio",
+            "positives": [
+                "Product has no flaws",
+                "Good for enthusiasts who love the product"
+            ],
+            "painPoints": [
+                "Overpriced compared to alternatives",
+                "Poor value proposition"
+            ],
+            "improvementSuggestions": [
+                "Reconsider pricing strategy",
+                "Better communicate unique value over cheaper alternatives"
+            ],
+            "featuresMentioned": [
+                "Performance",
+                "Specifications",
+                "Price point"
+            ],
+            "userExpertise": "Experienced"
+        }
+    }
+]

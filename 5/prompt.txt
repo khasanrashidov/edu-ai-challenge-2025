@@ -1,0 +1,87 @@
+You are an expert product feedback analyst. Your task is to analyze user feedback and extract structured insights in JSON format.
+
+INSTRUCTIONS:
+1. First, determine if the feedback is relevant to a specific product (not general complaints about shipping, customer service, etc.)
+2. If relevant, analyze sentiment, extract key information, and assess user expertise level
+3. Use chain-of-thought reasoning to explain your analysis process
+4. Output results in the specified JSON format
+
+EXAMPLES:
+
+Feedback: "I've never been a fan of the GPX shape and to me, it feels like I am holding a potato. The front hump felt a bit intrusive on the backside of my knucles. Ergonomics are better on the Viper V3 PRO specially on the rear portion of the mouse and the side part where you rest/grip your fingers to hold the mouse."
+
+Analysis: This feedback is clearly product-related, comparing two mouse models (GPX vs Viper V3 PRO). The user shows detailed knowledge of mouse ergonomics and specific design elements, indicating experience. While they criticize the GPX shape, they praise the Viper V3 PRO's ergonomics, making the overall sentiment positive toward the reviewed product.
+
+{
+  "sentiment": "Positive",
+  "isRelevant": true,
+  "mainSubject": "Ergonomics and shape (compared favorably to GPX)",
+  "positives": [
+    "Ergonomics are better on the Viper V3 PRO",
+    "Better rear portion ergonomics",
+    "Better side grip area"
+  ],
+  "painPoints": [],
+  "improvementSuggestions": [],
+  "featuresMentioned": [
+    "Ergonomics",
+    "Shape",
+    "Rear design",
+    "Side grip"
+  ],
+  "userExpertise": "Experienced"
+}
+
+Feedback: "If you are a GPX lover, I think they managed to improve everything I thought It was wrong about the GPX series, they made the shape better, they fixed the side buttons, scrolling wheel is better, gliding is faster and feels like the perfect compromise between control and speed."
+
+Analysis: This feedback is highly product-relevant, discussing specific improvements to a mouse model. The user demonstrates deep knowledge by comparing multiple technical aspects and understanding the balance between control and speed. The sentiment is clearly positive, praising multiple improvements.
+
+{
+  "sentiment": "Positive",
+  "isRelevant": true,
+  "mainSubject": "Feature improvements over competitor (GPX)",
+  "positives": [
+    "Better shape than GPX series",
+    "Improved side buttons",
+    "Better scrolling wheel",
+    "Faster gliding with good control-speed balance"
+  ],
+  "painPoints": [],
+  "improvementSuggestions": [],
+  "featuresMentioned": [
+    "Shape",
+    "Side buttons",
+    "Scrolling wheel",
+    "Gliding performance"
+  ],
+  "userExpertise": "Experienced"
+}
+
+Feedback: "Great product overall, but the delivery was delayed and the packaging was damaged. The customer service was unhelpful when I tried to get a replacement box."
+
+Analysis: This feedback is primarily about shipping and customer service issues, not the actual product features or performance. While the user mentions the product is "great," the main focus is on non-product related complaints. Therefore, this should be marked as not relevant for product improvement analysis.
+
+{
+  "sentiment": "Mixed",
+  "isRelevant": false,
+  "mainSubject": null,
+  "positives": [],
+  "painPoints": [],
+  "improvementSuggestions": [],
+  "featuresMentioned": [],
+  "userExpertise": "Unknown"
+}
+
+NOW ANALYZE THE FOLLOWING FEEDBACK:
+
+Feedback: "Sensor just stops tracking for like a half second kinda often even at 8000hz. I've also tried it plugged in and still the same problem. First one I got I had to return also because the dongle just didnt work, $150 mouse btw"
+
+Analysis: This feedback is clearly product-relevant, describing specific technical issues with a mouse's sensor tracking and wireless dongle functionality. The user mentions technical details like polling rate (8000hz) and troubleshooting steps (plugged in vs wireless), suggesting some technical knowledge. The sentiment is negative due to recurring hardware problems and quality control issues. The user expresses frustration about the price-to-reliability ratio.
+
+Provide your analysis in the specified JSON format.
+
+Feedback: "Is it worth it? It is a product with no flaws in my opinion, if you love it go for it, but its not worth the price since you'll be able to perform the same with a cheaper product with half the specs."
+
+Analysis: This feedback is product-relevant, providing a value assessment of the product. The user acknowledges the product has no flaws but questions its value proposition compared to cheaper alternatives. This shows understanding of market positioning and price-performance ratios. The sentiment is mixed - positive about quality but negative about value.
+
+Provide your analysis in the specified JSON format.
