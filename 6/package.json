@@ -1,0 +1,14 @@
+{
+    "name": "enigma-machine",
+    "version": "1.0.0",
+    "description": "A simplified implementation of the Enigma cipher machine",
+    "main": "enigma.js",
+    "scripts": {
+        "test": "jest --coverage",
+        "start": "node enigma.js"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "jest": "^29.7.0"
+    }
+}
