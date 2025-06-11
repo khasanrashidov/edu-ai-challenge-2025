@@ -1,0 +1,38 @@
+Sea Battle Game Test Coverage Report
+
+Test Results:
+- Test Suites: 4 passed, 4 total
+- Tests: 29 passed, 29 total
+- Snapshots: 0 total
+- Time: 1.734 s
+
+Coverage Summary:
+----------------|---------|----------|---------|---------|-------------------
+File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+----------------|---------|----------|---------|---------|-------------------
+All files       |   95.28 |    77.61 |     100 |      95 |                   
+ models         |   94.73 |    73.46 |     100 |   94.36 |                   
+  Board.js      |   97.05 |    77.77 |     100 |   96.66 | 31                
+  Player.js     |   90.32 |       72 |     100 |   90.32 | 23-26             
+  Ship.js       |     100 |    66.66 |     100 |     100 | 2                 
+ services       |   96.66 |    88.88 |     100 |   96.55 |                   
+  ShipPlacer.js |   96.66 |    88.88 |     100 |   96.55 | 42               
+----------------|---------|----------|---------|---------|-------------------
+
+Test Coverage Details:
+
+1. Models
+   - Board.js: Near complete coverage with only line 31 uncovered
+   - Player.js: High coverage with lines 23-26 uncovered
+   - Ship.js: 100% line coverage with some branch conditions uncovered
+
+2. Services
+   - ShipPlacer.js: High coverage with only line 42 uncovered
+
+Overall Assessment:
+- Statement Coverage: 95.28%
+- Branch Coverage: 77.61%
+- Function Coverage: 100%
+- Line Coverage: 95%
+
+The test suite demonstrates comprehensive coverage of the codebase, exceeding the required 60% coverage threshold. All core functionality is well-tested, with only a few edge cases and error conditions remaining uncovered. 
