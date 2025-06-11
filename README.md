@@ -256,3 +256,83 @@ New Input:
    - Show multiple examples
    - Use consistent formatting
    - Include varied scenarios
+
+## Task 6: Enigma Machine Bug Fix and Testing
+
+### Key AI Techniques
+
+- **AI-Powered Code Comprehension**
+- **AI-Assisted Bug Diagnosis & Resolution**
+- **AI-Driven Test Development**
+- **AI-Enhanced Explanations & Documentation**
+
+### Understanding the Task
+
+The task involves working with a simplified implementation of the classic Enigma cipher machine. The implementation includes core Enigma components:
+
+- Multiple rotors with configurable wiring and stepping
+- A plugboard for letter swaps
+- Reflector logic
+- Basic CLI interface
+
+The code contains a bug affecting encryption/decryption correctness that needs to be identified, fixed, and thoroughly tested.
+
+### AI-Driven Development Techniques
+
+1. **AI-Powered Code Comprehension**
+
+   - Rapidly understand complex codebase
+   - Analyze interactions between components
+   - Grasp architectural patterns
+   - Identify potential problem areas
+
+2. **AI-Assisted Bug Diagnosis & Resolution**
+
+   - Interactive debugging process
+   - Logical flaw analysis
+   - Execution path tracing
+   - Solution validation
+
+3. **AI-Driven Test Development**
+
+   - Test case generation
+   - Edge case identification
+   - Coverage optimization
+   - Test suite organization
+
+4. **AI-Enhanced Documentation**
+   - Clear bug descriptions
+   - Solution explanations
+   - Test coverage reporting
+   - Implementation details
+
+### Requirements
+
+1. **Bug Fix Implementation**
+
+   - Identify root cause
+   - Implement correction
+   - Validate solution
+   - Document changes
+
+2. **Test Coverage**
+
+   - Minimum 60% coverage
+   - Core functionality tests
+   - Edge case handling
+   - Regression prevention
+
+3. **Documentation**
+   - Bug description
+   - Fix explanation
+   - Test coverage report
+   - Implementation notes
+
+### Deliverables
+
+The solution should include:
+
+1. Fixed Enigma CLI application
+2. Comprehensive unit tests
+3. Bug fix documentation
+4. Test coverage report
