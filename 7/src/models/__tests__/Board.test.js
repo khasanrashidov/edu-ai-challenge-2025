@@ -82,5 +82,15 @@ describe('Board', () => {
                         '8 ~ ~ ~ ~ ~ ~ ~ ~ ~ ~\n' +
                         '9 ~ ~ ~ ~ ~ ~ ~ ~ ~ ~';
         expect(board.toString()).toBe(expected);
+
+        // Test with a ship
+        const ship = new Ship(['00', '01', '02'], 3);
+        board.placeShip(ship, true);
+
+        // When hideShips is false, ships should be visible
+        expect(board.toString(false)).toContain('S');
+
+        // When hideShips is true, ships should be hidden
+        expect(board.toString(true)).not.toContain('S');
     });
 }); 

@@ -16,10 +16,12 @@ export class Player {
 
     generateComputerGuess(boardSize) {
         if (this.mode === 'target' && this.targetQueue.length > 0) {
-            const guess = this.targetQueue.shift();
+            const guess = this.targetQueue[0];
             if (!this.hasGuessed(guess)) {
+                this.targetQueue.shift();
                 return guess;
             }
+            this.targetQueue.shift();
             if (this.targetQueue.length === 0) {
                 this.mode = 'hunt';
             }

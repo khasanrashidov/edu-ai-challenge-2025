@@ -36,8 +36,8 @@ export class Game {
 
     displayBoards() {
         console.log('\n   --- OPPONENT BOARD ---          --- YOUR BOARD ---');
-        const cpuDisplay = this.cpuBoard.toString();
-        const playerDisplay = this.playerBoard.toString();
+        const cpuDisplay = this.cpuBoard.toString(true);
+        const playerDisplay = this.playerBoard.toString(false);
 
         const cpuLines = cpuDisplay.split('\n');
         const playerLines = playerDisplay.split('\n');

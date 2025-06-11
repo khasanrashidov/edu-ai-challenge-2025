@@ -54,14 +54,19 @@ export class Board {
         return this.grid[row][col];
     }
 
-    toString() {
+    toString(hideShips = false) {
         let header = '  ';
         for (let h = 0; h < this.size; h++) header += h + ' ';
         let result = [header];
 
         for (let i = 0; i < this.size; i++) {
-            let row = `${i} ${this.grid[i].join(' ')}`;
-            result.push(row);
+            let row = `${i} `;
+            for (let j = 0; j < this.size; j++) {
+                // Hide ships ('S') for opponent's board but show hits ('X') and misses ('O')
+                const cell = this.grid[i][j];
+                row += (hideShips && cell === 'S' ? '~' : cell) + ' ';
+            }
+            result.push(row.trimEnd());
         }
 
         return result.join('\n');
