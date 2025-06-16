@@ -1,154 +1,107 @@
 # Sample Outputs
 
-## Example 1: Spotify
+# Analysis Report: Spotify
 
-```markdown
-# Spotify Analysis Report
+## 1. Brief History
 
-## Brief History
+Spotify, founded in 2006 in Sweden, is a leading music streaming service that offers a vast library of music, podcasts, and videos. It has grown to become one of the most popular music streaming platforms globally.
 
-- Founded in 2006 in Stockholm, Sweden by Daniel Ek and Martin Lorentzon
-- Launched in 2008 as a music streaming service
-- Reached 1 million users by 2009
-- Went public on NYSE in 2018
-- Currently has over 500 million monthly active users
+## 2. Target Audience
 
-## Target Audience
+- Music enthusiasts of all ages
+- People looking for convenient access to a wide range of music genres
+- Podcast listeners
+- Users who prefer personalized music recommendations
 
-- Music enthusiasts and casual listeners
-- Age range: Primarily 18-34 years old
-- Tech-savvy individuals
-- Users seeking convenient access to music
-- Podcast listeners (expanded audience)
+## 3. Core Features
 
-## Core Features
-
-- Music streaming with access to millions of songs
+- Extensive music library
 - Personalized playlists and recommendations
-- Podcast streaming platform
-- Offline listening capability
+- Offline listening
+- Podcasts and video content
 - Social sharing and collaborative playlists
 
-## Unique Selling Points
+## 4. Unique Selling Points
 
-- Advanced music recommendation algorithm
-- Extensive music library
+- Discover Weekly and Release Radar personalized playlists
 - Cross-platform availability
-- Free tier with ads
-- High-quality audio streaming
-- Integration with social media platforms
+- Collaborative playlists and social features
+- High-quality audio streaming options
 
-## Business Model
+## 5. Business Model
 
-- Freemium model with two main tiers:
-  - Free tier (ad-supported)
-  - Premium subscription
-- Family and student plans
-- Revenue from:
-  - Subscription fees
-  - Advertising
-  - Partnerships with artists and labels
-  - Podcast advertising
+- Freemium model with both free ad-supported and premium subscription options
+- Revenue primarily generated through subscriptions and advertising
+- Partnerships with brands and artists for exclusive content
 
-## Tech Stack Insights
+## 6. Tech Stack Insights
 
-- Backend: Python, Java
-- Frontend: React, JavaScript
-- Cloud infrastructure: Google Cloud Platform
-- Machine learning for recommendations
-- Big data processing for user analytics
-- Content delivery network (CDN)
+- Backend: Java, Python, Scala
+- Frontend: JavaScript, React
+- Cloud services: Google Cloud Platform, AWS
+- Data processing: Apache Kafka, Apache Hadoop
 
-## Perceived Strengths
+## 7. Perceived Strengths
 
-- Extensive music library
+- Extensive music catalog
+- Robust music recommendation algorithms
 - User-friendly interface
-- Excellent recommendation system
-- Cross-platform compatibility
-- Regular feature updates
-- Strong brand recognition
+- Multi-platform availability
+- Strong brand partnerships and exclusive content
 
-## Perceived Weaknesses
+## 8. Perceived Weaknesses
 
-- Royalty payment controversies
-- Limited high-fidelity audio options
-- Regional content restrictions
-- Dependence on internet connection
-- Competition from Apple Music and others
-```
+- Dependency on music label agreements
+- Competition from other streaming services
+- Limited offline downloads for free users
+- Discovery of new artists can be improved
 
-## Example 2: Custom Project Management Tool
+This analysis provides an overview of Spotify's history, target audience, core features, unique selling points, business model, tech stack, strengths, and weaknesses.
 
-```markdown
-# Project Management Tool Analysis Report
+# Notion Analysis Report
 
-## Brief History
+## 1. Brief History
 
-- Modern cloud-based solution
-- Developed to address growing remote work needs
-- Evolved from basic task management to comprehensive project platform
-- Regular updates and feature additions
+Notion is a versatile productivity tool that was founded in 2013 by Ivan Zhao. It started as a simple note-taking app but gradually evolved into a comprehensive workspace for individuals and teams.
 
-## Target Audience
+## 2. Target Audience
 
-- Project managers and team leaders
-- Remote and distributed teams
-- Software development teams
-- Small to medium-sized businesses
-- Freelancers and consultants
+Notion caters to a wide range of users including students, knowledge workers, project managers, entrepreneurs, and teams in various industries. It is suitable for anyone looking to organize information, collaborate on projects, or create personalized workflows.
 
-## Core Features
+## 3. Core Features
 
-- Kanban board visualization
-- Time tracking and reporting
-- File sharing and collaboration
-- Integration capabilities
-- Progress tracking and analytics
+- **Note-taking**: Create and organize notes in a hierarchical structure.
+- **Database**: Build databases with customizable properties for structured data management.
+- **Task Management**: Manage tasks and projects with to-do lists and kanban boards.
+- **Collaboration**: Real-time editing, comments, and sharing for seamless teamwork.
+- **Templates**: Pre-built templates for common use cases like meeting notes, project planning, etc.
 
-## Unique Selling Points
+## 4. Unique Selling Points
 
-- Intuitive kanban interface
-- Comprehensive time tracking
-- Developer tool integrations
-- Cloud-based accessibility
-- Real-time collaboration features
+- **Flexibility**: Notion's modular design allows users to create custom workflows tailored to their needs.
+- **All-in-One**: Combines note-taking, task management, database, and collaboration in a single platform.
+- **Customization**: Users can design their workspace with various formats, colors, and layouts.
+- **Integrations**: Connects with popular tools like Slack, Google Drive, and more for enhanced productivity.
 
-## Business Model
+## 5. Business Model
 
-- Subscription-based pricing
-- Tiered plans based on:
-  - Number of users
-  - Feature access
-  - Storage capacity
-- Enterprise licensing options
-- Additional revenue from:
-  - Premium integrations
-  - Advanced analytics
-  - Custom solutions
+Notion primarily operates on a freemium model, offering a feature-rich free plan with limitations on certain advanced functionalities. It generates revenue through premium subscriptions that unlock additional features, collaboration tools, and increased storage capacity.
 
-## Tech Stack Insights
+## 6. Tech Stack Insights
 
-- Cloud infrastructure
-- Real-time collaboration features
-- RESTful API architecture
-- Modern web technologies
-- Mobile-responsive design
-- Integration frameworks
+Notion's tech stack includes a mix of programming languages and frameworks like React, Redux, Electron, and a custom rendering engine. It leverages cloud infrastructure for data storage and synchronization across devices.
 
-## Perceived Strengths
+## 7. Perceived Strengths
 
-- User-friendly interface
-- Flexible project visualization
-- Strong integration capabilities
-- Real-time updates
-- Comprehensive reporting
-- Scalable solution
+- **Versatility**: Notion adapts to various use cases and workflows, making it suitable for personal and professional tasks.
+- **User-Friendly**: Intuitive interface and drag-and-drop functionality for easy navigation and customization.
+- **Collaboration**: Seamless teamwork with real-time editing and commenting features.
+- **Scalability**: Scales from individual users to large teams with robust performance.
 
-## Perceived Weaknesses
+## 8. Perceived Weaknesses
 
-- Learning curve for new users
-- Potential performance issues with large projects
-- Limited offline capabilities
-- Integration complexity
-- Cost for larger teams
-```
+- **Learning Curve**: The extensive feature set may require time for users to fully explore and utilize effectively.
+- **Performance**: Occasional lags and syncing issues, especially in complex workspaces with large amounts of data.
+- **Offline Functionality**: Limited offline access compared to traditional desktop applications.
+
+This analysis provides a comprehensive overview of Notion, highlighting its evolution, core features, target audience, and key strengths and weaknesses in the productivity software market.
