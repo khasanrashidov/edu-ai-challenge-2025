@@ -1,82 +1,130 @@
 # Service Analyzer
 
-A console application that generates comprehensive analysis reports for services and products using OpenAI's GPT-3.5 API.
+A powerful console application that generates comprehensive analysis reports for services and products using OpenAI's GPT-4.1-mini API. This tool helps you understand and document various aspects of any service or product through AI-powered analysis.
 
-## Features
+## 🌟 Features
 
-- Accepts service names (e.g., "Spotify", "Notion") or custom service descriptions
-- Generates detailed markdown-formatted reports with multiple perspectives
-- Includes sections for history, target audience, features, business model, and more
-- Saves reports to markdown files for easy sharing and documentation
+- **Service Analysis**: Accepts service names (e.g., "Spotify", "Notion") or custom service descriptions
+- **Comprehensive Reports**: Generates detailed markdown-formatted reports with multiple perspectives
+- **Structured Output**: Includes sections for history, target audience, features, business model, and more
+- **Easy Sharing**: Saves reports to markdown files for easy sharing and documentation
+- **Customizable Analysis**: Get insights from different angles and perspectives
+- **Flexible Input**: Supports both single-line service names and multi-line descriptions
 
-## Prerequisites
+## 📋 Prerequisites
 
-- Python 3.7 or higher
+- Python 3.12 or higher
 - OpenAI API key
+- Basic understanding of command line interface
+- Internet connection for API access
 
-## Installation
+## 🚀 Installation
 
-1. Clone this repository
-2. Navigate to the project directory
-3. Create and activate a virtual environment:
+1. Clone this repository:
+
    ```bash
+   git clone <repository-url>
+   cd service-analyzer
+   ```
+
+2. Create and activate a virtual environment:
+
+   ```bash
+   # Create virtual environment
    python -m venv .venv
-   # On Windows:
+
+   # Activate on Windows
    .venv\Scripts\activate
-   # On Unix or MacOS:
+
+   # Activate on Unix or MacOS
    source .venv/bin/activate
    ```
-4. Install required packages:
+
+3. Install required packages:
+
    ```bash
    pip install -r requirements.txt
    ```
-5. Create a `.env` file in the project directory and add your OpenAI API key:
-   ```
-   OPENAI_API_KEY=your_api_key_here
+
+4. Create a `.env` file in the project directory:
+   ```bash
+   # Create .env file
+   echo "OPENAI_API_KEY=your_api_key_here" > .env
    ```
 
-## Usage
+## 💻 Usage
 
-1. Activate the virtual environment if not already activated
+1. Ensure your virtual environment is activated
 2. Run the application:
    ```bash
    python service_analyzer.py
    ```
-3. Enter a service name or paste a service description
-4. Press Enter twice to submit your input
-5. The application will generate and display the analysis report
-6. The report will also be saved to `analysis_report.md` in the current directory
+3. Choose your input method:
+   - For a single service name: Just type and press Enter
+   - For a detailed description: Type 'multi' and press Enter, then enter your text
+4. Press Enter twice to submit multi-line input
+5. Wait for the analysis to complete (typically 10-30 seconds)
+6. View the generated report in the console
+7. Find the saved report in `analysis_report.md`
 
-## Example Inputs
+## 📝 Example Inputs
 
-1. Service name:
+### Single Service Name:
 
-   ```
-   Spotify
-   ```
+```
+Spotify
+```
 
-2. Service description:
-   ```
-   A cloud-based project management tool that helps teams collaborate on tasks,
-   share files, and track progress. Features include kanban boards, time tracking,
-   and integration with popular development tools.
-   ```
+### Multi-line Description:
 
-## Output Format
+```
+A cloud-based project management tool that helps teams collaborate on tasks,
+share files, and track progress. Features include kanban boards, time tracking,
+and integration with popular development tools.
+```
+
+## 📊 Output Format
 
 The generated report includes the following sections:
 
-- Brief History
-- Target Audience
-- Core Features
-- Unique Selling Points
-- Business Model
-- Tech Stack Insights
-- Perceived Strengths
-- Perceived Weaknesses
+- **Brief History**: Origin and evolution of the service
+- **Target Audience**: Primary and secondary user groups
+- **Core Features**: Main functionalities and capabilities
+- **Unique Selling Points**: Competitive advantages
+- **Business Model**: Revenue streams and monetization strategies
+- **Tech Stack Insights**: Technology infrastructure and architecture
+- **Perceived Strengths**: Key advantages and positive aspects
+- **Perceived Weaknesses**: Areas for improvement and challenges
 
-## Notes
+## ⚙️ Configuration
 
-- The application uses GPT-3.5-turbo model for analysis
-- Reports are generated in markdown format for easy reading and sharing
-- The API key is stored in the `.env` file and should not be committed to version control
+- The application uses the gpt-4.1-mini model for analysis
+- Reports are generated in markdown format
+- API key is stored securely in the `.env` file
+- Output files are saved in the current directory
+- Default timeout is set to 30 seconds for API requests
+
+## 🔒 Security Notes
+
+- Never commit your `.env` file to version control
+- Keep your OpenAI API key secure
+- Regularly update your dependencies for security patches
+- API requests are made over HTTPS
+
+## ⚠️ Error Handling
+
+The application handles various error scenarios:
+
+- API timeouts
+- Network connectivity issues
+- Invalid API keys
+- File system errors
+- Invalid user input
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.

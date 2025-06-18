@@ -1,6 +1,5 @@
 import os
 import sys
-import json
 import requests
 from dotenv import load_dotenv
 
@@ -38,7 +37,7 @@ def generate_analysis_report(input_text):
     headers = {"Authorization": f"Bearer {API_KEY}", "Content-Type": "application/json"}
 
     data = {
-        "model": "gpt-3.5-turbo",
+        "model": "gpt-4.1-mini",
         "messages": [
             {
                 "role": "system",
