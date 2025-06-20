@@ -52,6 +52,59 @@ class AudioAnalyzer:
         result = response.json()
         return result["text"], result.get("duration", 0)
 
+    def improve_transcript(self, transcript):
+        """Improve transcript quality using GPT-4.1-mini"""
+        print("Improving transcript quality...")
+
+        prompt = f"""
+        Please analyze and improve the following transcript. Fix any issues while preserving the original meaning and content:
+
+        Issues to address:
+        1. Fix punctuation, capitalization, and grammar
+        2. Improve sentence structure and clarity
+        3. Correct any obvious transcription errors
+        4. Add proper paragraph breaks for different speakers or topics
+        5. Maintain the original tone and style
+        6. Preserve technical terms and proper nouns accurately
+        7. Fix any incomplete sentences or unclear phrases
+
+        Original transcript:
+        {transcript}
+
+        Improved transcript:
+        """
+
+        response = requests.post(
+            f"{self.base_url}/chat/completions",
+            headers=self.headers,
+            json={
+                "model": "gpt-4.1-mini",
+                "messages": [
+                    {
+                        "role": "system",
+                        "content": "You are a professional transcription editor. Your task is to improve the quality of transcripts by fixing punctuation, grammar, and clarity while preserving the original meaning and content. Return only the improved transcript without any additional commentary.",
+                    },
+                    {"role": "user", "content": prompt},
+                ],
+                "max_tokens": 4000,
+                "temperature": 0.1,
+            },
+        )
+
+        if response.status_code != 200:
+            raise Exception(
+                f"Transcript improvement failed: {response.status_code} - {response.text}"
+            )
+
+        result = response.json()
+        improved_transcript = result["choices"][0]["message"]["content"].strip()
+
+        # Remove any potential markdown formatting that might have been added
+        improved_transcript = re.sub(r"^```\w*\n", "", improved_transcript)
+        improved_transcript = re.sub(r"\n```$", "", improved_transcript)
+
+        return improved_transcript
+
     def summarize_transcript(self, transcript):
         """Summarize transcript using GPT-4.1-mini"""
         print("Generating summary...")
@@ -96,9 +149,36 @@ class AudioAnalyzer:
         """Extract analytics from transcript using GPT-4.1-mini"""
         print("Extracting analytics...")
 
-        # Calculate word count
-        words = re.findall(r"\b\w+\b", transcript.lower())
-        word_count = len(words)
+        # Calculate word count using a more robust method
+        def count_words(text):
+            """Count words more accurately and consistently"""
+            # Remove extra whitespace and normalize
+            text = re.sub(r"\s+", " ", text.strip())
+
+            # Split by whitespace and filter out empty strings
+            words = [word for word in text.split() if word.strip()]
+
+            # Additional filtering to remove common non-words
+            filtered_words = []
+            for word in words:
+                # Remove punctuation from word boundaries
+                clean_word = re.sub(r"^[^\w]+|[^\w]+$", "", word)
+                # Only count if it contains at least one letter or number
+                if re.search(r"[a-zA-Z0-9]", clean_word):
+                    filtered_words.append(clean_word)
+
+            return len(filtered_words), filtered_words
+
+        word_count, word_list = count_words(transcript)
+
+        # Debug: Show word count details (first 20 words as sample)
+        print(f"   📊 Word count calculation:")
+        print(f"      • Total words found: {word_count}")
+        if word_count > 0:
+            sample_words = word_list[:20]
+            print(f"      • Sample words: {', '.join(sample_words)}")
+            if len(word_list) > 20:
+                print(f"      • ... and {len(word_list) - 20} more words")
 
         # Calculate speaking speed (WPM)
         speaking_speed_wpm = (
@@ -227,23 +307,31 @@ class AudioAnalyzer:
             print("=" * 60)
 
             # Step 1: Transcribe audio
-            transcript, duration = self.transcribe_audio(audio_file_path)
-            print(f"✓ Transcription completed ({len(transcript)} characters)")
+            raw_transcript, duration = self.transcribe_audio(audio_file_path)
+            print(f"✓ Raw transcription completed ({len(raw_transcript)} characters)")
 
-            # Step 2: Generate summary
-            summary = self.summarize_transcript(transcript)
+            # Step 2: Improve transcript quality
+            improved_transcript = self.improve_transcript(raw_transcript)
+            print(
+                f"✓ Transcript quality improved ({len(improved_transcript)} characters)"
+            )
+
+            # Step 3: Generate summary
+            summary = self.summarize_transcript(improved_transcript)
             print(f"✓ Summary generated ({len(summary)} characters)")
 
-            # Step 3: Extract analytics
-            analytics = self.analyze_transcript(transcript, duration)
+            # Step 4: Extract analytics
+            analytics = self.analyze_transcript(improved_transcript, duration)
             print(f"✓ Analytics extracted")
 
-            # Step 4: Save results
-            transcription_file = self.save_transcription(transcript, audio_file_path)
+            # Step 5: Save results
+            transcription_file = self.save_transcription(
+                improved_transcript, audio_file_path
+            )
             summary_file = self.save_summary(summary, audio_file_path)
             analytics_file = self.save_analytics(analytics, audio_file_path)
 
-            # Step 5: Display results
+            # Step 6: Display results
             print("\n" + "=" * 60)
             print("RESULTS")
             print("=" * 60)
@@ -262,13 +350,23 @@ class AudioAnalyzer:
                 for topic in analytics["frequently_mentioned_topics"]:
                     print(f"     - {topic['topic']}: {topic['mentions']} mentions")
 
-            print(f"\n📝 SUMMARY PREVIEW:")
+            print(f"\n�� SUMMARY PREVIEW:")
             print("-" * 40)
             print(summary[:300] + "..." if len(summary) > 300 else summary)
             print("-" * 40)
 
+            # Show improvement comparison if there are significant differences
+            if len(improved_transcript) != len(raw_transcript):
+                print(f"\n🔧 TRANSCRIPT IMPROVEMENT:")
+                print(f"   • Original length: {len(raw_transcript)} characters")
+                print(f"   • Improved length: {len(improved_transcript)} characters")
+                print(
+                    f"   • Changes: {abs(len(improved_transcript) - len(raw_transcript))} characters"
+                )
+
             return {
-                "transcript": transcript,
+                "raw_transcript": raw_transcript,
+                "improved_transcript": improved_transcript,
                 "summary": summary,
                 "analytics": analytics,
                 "files": {

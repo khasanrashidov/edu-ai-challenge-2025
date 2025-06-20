@@ -1,0 +1,32 @@
+{
+  "metadata": {
+    "source_file": "CAR0004.mp3",
+    "analyzed": "2025-06-20 16:17:45"
+  },
+  "analytics": {
+    "word_count": 743,
+    "speaking_speed_wpm": 99,
+    "frequently_mentioned_topics": [
+      {
+        "topic": "Chest pain",
+        "mentions": 9
+      },
+      {
+        "topic": "Heart attack",
+        "mentions": 5
+      },
+      {
+        "topic": "Symptoms",
+        "mentions": 5
+      },
+      {
+        "topic": "Medical history",
+        "mentions": 4
+      },
+      {
+        "topic": "Medications",
+        "mentions": 3
+      }
+    ]
+  }
+}
